@@ -1,8 +1,8 @@
 
 def tabuada(numero):
-   print(f"tabuada:{numero}")
+   print(f"tabuada:{numero*2}")
    for i in range (1,10):
-      print(numero*i)
-      tabuada(numero)
-      
+     return print(numero*i)
+
 numero = int(input("Digite um numero inteiro"))
+tabuada(numero)
