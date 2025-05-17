@@ -1,28 +1,26 @@
-print("=== Bem-vindo ao Sistema Bancário JWC ===")
+print(" Bem-vindo ao Sistema Bancário JWC")
 
-# Solicita nome do titular
-nome = input("Digite o nome do titular da conta: ").strip()
-titular = (nome,)  # Tupla com o nome
 
-# Inicializa listas
+nome = input("Digite o nome do titular da conta: ")
+titular = (nome,) 
+
 saldo = []
 historico = []
 
-# Solicita depósito inicial (valor positivo)
 valor = -1
 while valor <= 0:
     entrada = input("Digite o valor do depósito inicial: R$ ")
     if entrada.replace('.', '', 1).isdigit():
         valor = float(entrada)
-        if valor > 0:
+        if valor >= 0:
             saldo.append(valor)
             historico.append("Depósito inicial: R$ {:.2f}".format(valor))
         else:
-            print("Erro: O valor deve ser positivo.")
+            print("valor invalido.")
     else:
-        print("Erro: Digite um número válido.")
+        print("valor válido.")
 
-# Menu de operações
+
 opcao = ''
 while opcao != '5':
     print("\n--- Menu de Operações ---")
@@ -36,18 +34,20 @@ while opcao != '5':
 
     if opcao == '1':
         valor = -1
+
         while valor <= 0:
-            entrada = input("Digite o valor para depositar: R$ ")
+            entrada = input("Digite o valor de depositar: R$ ")
             if entrada.replace('.', '', 1).isdigit():
-                valor = float(entrada)
+                valor = float(entrada) 
                 if valor > 0:
                     saldo[0] += valor
                     historico.append("Depósito: R$ {:.2f}".format(valor))
                     print("Depósito realizado com sucesso. Novo saldo: R$ {:.2f}".format(saldo[0]))
                 else:
-                    print("Erro: O valor deve ser positivo.")
+                    print("O valor deve ser positivo.")
             else:
-                print("Erro: Digite um número válido.")
+                print("Digite um número válido.")
+                
 
     elif opcao == '2':
         valor = -1
@@ -61,18 +61,18 @@ while opcao != '5':
                         historico.append("Saque: R$ {:.2f}".format(valor))
                         print("Saque realizado com sucesso. Novo saldo: R$ {:.2f}".format(saldo[0]))
                     else:
-                        print("Erro: Saldo insuficiente.")
+                        print("Saldo insuficiente.")
                         break
                 else:
-                    print("Erro: O valor deve ser positivo.")
+                    print("O valor deve ser positivo.")
             else:
-                print("Erro: Digite um número válido.")
+                print("Digite um número válido.")
 
     elif opcao == '3':
         print("Saldo atual: R$ {:.2f}".format(saldo[0]))
 
     elif opcao == '4':
-        print("\n--- Histórico de Transações ---")
+        print("\nHistórico de Transações")
         if len(historico) > 0:
             for transacao in historico:
                 print(transacao)
