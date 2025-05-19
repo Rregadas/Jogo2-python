@@ -1,3 +1,4 @@
+
 print(" Bem-vindo ao Sistema Bancário JWC")
 
 
@@ -80,6 +81,6 @@ while opcao != '5':
             print("Nenhuma transação realizada ainda.")
 
     elif opcao == '5':
-        print("Obrigado por utilizar o sistema bancário JWC. Até a próxima!")
+        print("Obrigado por utilizar o sistema")
     else:
         print("Opção inválida. Por favor, escolha uma opção entre 1 e 5.")
