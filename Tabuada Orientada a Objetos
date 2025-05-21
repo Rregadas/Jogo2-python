@@ -1,0 +1,53 @@
+class Tabuada:
+    def __init__(self, numero):
+        self.numero = numero  # Atributo público
+        self.__resultado = []  # Atributo privado
+
+    def soma(self):
+        self.__resultado = []
+        print(f"\nTabuada de Soma para o número {self.numero}:")
+        for i in range(1, 11):
+            res = self.numero + i
+            self.__resultado.append(res)
+            print(f"{self.numero} + {i} = {res}")
+
+    def subtracao(self):
+        self.__resultado = []
+        print(f"\nTabuada de Subtração para o número {self.numero}:")
+        for i in range(1, 11):
+            res = self.numero - i
+            self.__resultado.append(res)
+            print(f"{self.numero} - {i} = {res}")
+
+    def multiplicacao(self):
+        self.__resultado = []
+        print(f"\nTabuada de Multiplicação para o número {self.numero}:")
+        for i in range(1, 11):
+            res = self.numero * i
+            self.__resultado.append(res)
+            print(f"{self.numero} x {i} = {res}")
+
+    def divisao(self):
+        self.__resultado = []
+        print(f"\nTabuada de Divisão para o número {self.numero}:")
+        for i in range(1, 11):
+            res = self.numero / i  # Não há divisão por zero, pois i vai de 1 a 10
+            self.__resultado.append(res)
+            print(f"{self.numero} ÷ {i} = {res:.2f}")  # Limita a 2 casas decimais
+
+# Programa principal
+def main():
+    try:
+        numero = float(input("Digite um número para ver as tabuadas: "))
+        tabuada = Tabuada(numero)
+
+        tabuada.soma()
+        tabuada.subtracao()
+        tabuada.multiplicacao()
+        tabuada.divisao()
+
+    except ValueError:
+        print("Erro: por favor, digite um número válido.")
+
+if __name__ == "__main__":
+    main()
